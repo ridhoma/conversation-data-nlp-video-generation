@@ -1,0 +1,16 @@
+[project]
+name = "conversation-data-nlp-video-generation"
+version = "0.1.0"
+description = "NLP analysis of AI video-generation assistant conversations"
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# Real packages: the folder name IS the import name (no remap). Notebooks import
+# `from nlp.pipelines import ...`, `from data_science.visualisation import ...`, etc.
+# Submodules added later are importable automatically.
+[tool.hatch.build.targets.wheel]
+packages = ["nlp", "data_science"]

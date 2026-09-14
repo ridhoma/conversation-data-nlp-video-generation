@@ -2,8 +2,18 @@
 name = "conversation-data-nlp-video-generation"
 version = "0.1.0"
 description = "NLP analysis of AI video-generation assistant conversations"
-requires-python = ">=3.11"
-dependencies = []
+requires-python = ">=3.12"
+dependencies = [
+    "ds-core[nlp,viz,model]",
+]
+
+# Local path, non-editable: a built snapshot of the shared stack, not a track of
+# ongoing ds-core edits. No remote involved.
+[tool.uv.sources]
+ds-core = { path = "../../lib/ds-core" }
+
+[dependency-groups]
+dev = ["ipykernel"]
 
 [build-system]
 requires = ["hatchling"]

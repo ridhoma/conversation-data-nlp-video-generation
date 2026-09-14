@@ -91,7 +91,7 @@ The notebooks must be re-runnable by anyone and produce the same labels. We defe
 - **Pin model revisions** — pass an explicit `revision=` (commit hash) to every `from_pretrained` / `SentenceTransformer` load so a re-download doesn't silently swap weights.
 - **Set seeds** — `torch.manual_seed`, `numpy` seed, and `transformers.set_seed` at notebook top.
 - **Cache enriched outputs** — write the NLP-labelled DataFrame to `data/processed/` so `03_analysis.ipynb` reads the cached CSV and never has to re-run inference. Inference is the slow, non-deterministic-risk step; the analysis on top of it should be instant and fully deterministic.
-- **Record environment** — the pinned `requirements.txt` already covers package versions.
+- **Record environment** — `pyproject.toml` / `uv.lock` already cover package versions.
 
 ## 4. Data I/O & Pipeline Flow
 

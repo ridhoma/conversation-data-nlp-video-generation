@@ -55,17 +55,11 @@ conversation-data-nlp-video-generation/
 
 First, **download the data** (see [`data/README.md`](data/README.md)) and place it under `data/` — it's not bundled with the repo.
 
-Dependencies are pinned in `requirements.txt` (and `pyproject.toml` / `uv.lock`).
+Dependencies come from `ds-core[nlp,viz,model]` (see `pyproject.toml` / `uv.lock`) — a shared stack pinned once for every project on this machine.
 
 ```bash
-# with uv
 uv sync
-uv run jupyter lab
-
-# or with pip
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-jupyter lab
+jupyter lab   # pick the "conversation-data-nlp-video-generation" kernel
 ```
 
 Then run the notebooks in order (`01` → `02` → `03`). `nlp/` and `data_science/` are installable packages, so notebooks import them directly (`from nlp.pipelines import MessageIntentPipeline`). Model weights download on first run.

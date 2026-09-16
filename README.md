@@ -55,7 +55,9 @@ conversation-data-nlp-video-generation/
 
 First, **download the data** (see [`data/README.md`](data/README.md)) and place it under `data/` — it's not bundled with the repo.
 
-Dependencies come from `ds-core[nlp,viz,model]` (see `pyproject.toml` / `uv.lock`) — a shared stack pinned once for every project on this machine.
+Dependencies come from the personal workspace's local `ds-core[nlp,viz,model]` copy (see
+`pyproject.toml` / `uv.lock`). This keeps the project independent from the company
+workspace while preserving the same reproducible stack.
 
 ```bash
 uv sync
